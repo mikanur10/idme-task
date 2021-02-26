@@ -25,7 +25,7 @@ request $(function () {
           if (payload.status[0].verified) {
             $("#test").text("Thank you for verifiying!"
             )
-            name = userObj.attributes[1].value
+            first = userObj.attributes[1].value
             group = userObj.status[0].group
             $("#test").text("Hi " + name + "!")
             $("#idme-verification").hide();
