@@ -18,14 +18,12 @@ $(function () {
         $.get(this.params()).done((payload) => {
           console.log(payload)
           if (payload.status[0].verified) {
-            first = payload.attributes[1].value
-            group = payload.status[0].group
             $("#idme-button").hide();
             $("#idme-button").before(
               "<span>Thank you " +
-              first +
+              payload.attributes[1].value +
               " for verifying your " +
-              group +
+              payload.status[0].group.subgroups[0] +
               " status with ID.me.</span>"
             );
           }
