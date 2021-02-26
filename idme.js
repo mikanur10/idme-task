@@ -1,6 +1,3 @@
-var first = ""
-var group = ""
-var userObj = {}
 
 $(function () {
   var IDme = {
@@ -18,6 +15,10 @@ $(function () {
     },
 
     request: function () {
+      var idToken = ""
+      var first = ""
+      var group = ""
+      var userObj = {}
       if (this.access_token) {
         $.get(this.params()).done((payload) => {
           userObj = payload
