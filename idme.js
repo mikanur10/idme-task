@@ -14,6 +14,8 @@ $(function () {
     },
 
     request: function () {
+      var first = ""
+      var group = ""
       if (this.access_token) {
         $.get(this.params()).done((payload) => {
           console.log(payload)
