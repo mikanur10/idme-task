@@ -1,4 +1,3 @@
-
 $(function () {
   var IDme = {
     access_token: window.location.hash
@@ -17,18 +16,14 @@ $(function () {
     request: function () {
       var first = ""
       var group = ""
-      var payload = {}
       if (this.access_token) {
         $.get(this.params()).done((payload) => {
           console.log(payload)
           if (payload.status[0].verified) {
-            $("#test").text("Thank you for verifiying!"
-            )
             first = payload.attributes[1].value
             group = payload.status[0].group
-            $("#test").text("Hi " + first + "!")
-            $("#idme-verification").hide();
-            $("#idme-verification").before(
+            $("#idme-button").hide();
+            $("#idme-button").before(
               "<span>Thank you " +
               first +
               " for verifying your " +
