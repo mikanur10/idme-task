@@ -1,3 +1,7 @@
+var name = ""
+var group = ""
+var userObj = {}
+
 $(function () {
   var IDme = {
     access_token: window.location.hash
@@ -15,20 +19,24 @@ $(function () {
 
     request: function () {
       if (this.access_token) {
-        $.get(this.params()).done(function (payload) {
-          console.log("ID.me payload:", payload);
-
+        $.get(this.params()).done((payload) => {
+          userObj = payload
+          console.log(userObj)
           if (payload.status[0].verified) {
+            $("#test").text("Thank you for verifiying!"
+            )
+            name = userObj.attributes[1].value
+            group = userObj.status[0].group
+            $("#test").text("Hi " + name + "!")
             $("#idme-verification").hide();
             $("#idme-verification").before(
               "<span>Thank you " +
-              payload.attributes[0].value +
+              name +
               " for verifying your " +
-              payload.status[0].subgroups[0] +
+              group +
               " status with ID.me.</span>"
             );
           }
-          else "not verified"
         });
       }
     }
