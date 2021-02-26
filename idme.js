@@ -23,8 +23,8 @@ $(function () {
             var last = payload.attributes[2].value
             var postal = payload.attributes[3].value
             var group = payload.status[0].group
-            $("#idme-verification").hide();
-            $("#idme-verification").before(
+            $("#idme-button").hide();
+            $("#idme-button").before(
               "<span>Thank you " +
               first + last +
               " for verifying your " +
