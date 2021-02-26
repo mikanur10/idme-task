@@ -1,3 +1,6 @@
+var first = ""
+var group = ""
+var userObj = {}
 
 $(function () {
   var IDme = {
@@ -15,21 +18,22 @@ $(function () {
     },
 
     request: function () {
+      var idToken = ""
       var first = ""
       var group = ""
-      var object = {}
+      var userObj = {}
       if (this.access_token) {
         $.get(this.params()).done((payload) => {
-          object = payload
-          console.log(object)
+          userObj = payload
+          console.log(userObj)
           if (payload.status[0].verified) {
             $("#test").text("Thank you for verifiying!"
             )
-            first = object.attributes[1].value
-            group = object.status[0].group
+            first = userObj.attributes[1].value
+            group = userObj.status[0].group
             $("#test").text("Hi " + first + "!")
-            $("#idme-button").hide();
-            $("#idme-button").before(
+            $("#idme-verification").hide();
+            $("#idme-verification").before(
               "<span>Thank you " +
               first +
               " for verifying your " +
