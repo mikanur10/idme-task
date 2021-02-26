@@ -28,6 +28,7 @@ $(function () {
               " status with ID.me.</span>"
             );
           }
+          else "not verified"
         });
       }
     }
