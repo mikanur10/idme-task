@@ -2,7 +2,7 @@ var first = ""
 var group = ""
 var userObj = {}
 
-$(function () {
+request $(function () {
   var IDme = {
     access_token: window.location.hash
       .split("&")[0]
@@ -18,26 +18,16 @@ $(function () {
     },
 
     request: function () {
-      // var userObj = {}
       if (this.access_token) {
         $.get(this.params()).done((payload) => {
-          var email = ""
-          var first = ""
-          var last = ""
-          var postal = ""
-          var group = ""
           userObj = payload
           console.log(userObj)
           if (payload.status[0].verified) {
             $("#test").text("Thank you for verifiying!"
             )
-            email = userObj.attributes[0].value
-            first = userObj.attributes[1].value
-            last = userObj.attributes[2].value
-            postal = userObj.attributes[3].value
+            name = userObj.attributes[1].value
             group = userObj.status[0].group
-            group = userObj.status[0].group
-            $("#test").text("Hi " + first + last + "!")
+            $("#test").text("Hi " + name + "!")
             $("#idme-verification").hide();
             $("#idme-verification").before(
               "<span>Thank you " +
