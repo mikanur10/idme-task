@@ -2,7 +2,7 @@ var first = ""
 var group = ""
 var userObj = {}
 
-request $(function () {
+$(function () {
   var IDme = {
     access_token: window.location.hash
       .split("&")[0]
@@ -27,7 +27,7 @@ request $(function () {
             )
             first = userObj.attributes[1].value
             group = userObj.status[0].group
-            $("#test").text("Hi " + name + "!")
+            $("#test").text("Hi " + first + "!")
             $("#idme-verification").hide();
             $("#idme-verification").before(
               "<span>Thank you " +
