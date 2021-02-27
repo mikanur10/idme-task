@@ -1,7 +1,3 @@
-var first = ""
-var group = ""
-var userObj = {}
-
 $(function () {
   var IDme = {
     access_token: window.location.hash
@@ -19,7 +15,7 @@ $(function () {
 
     request: function () {
       var idToken = ""
-      var first = ""
+      var name = ""
       var group = ""
       var userObj = {}
       if (this.access_token) {
@@ -29,13 +25,13 @@ $(function () {
           if (payload.status[0].verified) {
             $("#test").text("Thank you for verifiying!"
             )
-            first = userObj.attributes[1].value
+            name = userObj.attributes[1].value
             group = userObj.status[0].group
-            $("#test").text("Hi " + first + "!")
+            $("#test").text("Hi " + name + "!")
             $("#idme-verification").hide();
             $("#idme-verification").before(
               "<span>Thank you " +
-              first +
+              name +
               " for verifying your " +
               group +
               " status with ID.me.</span>"
