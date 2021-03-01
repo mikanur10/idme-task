@@ -14,22 +14,17 @@ $(function () {
     },
 
     request: function () {
-      // var name = ""
-      // var group = ""
-      // var userObj = {}
       if (this.access_token) {
         $.get(this.params()).done((payload) => {
           userObj = payload
           console.log(userObj)
           if (payload.status[0].verified) {
-            name = userObj.attributes[1].value
-            group = userObj.status[0].group
             $("#idme-wallet-button").hide();
             $("#idme-wallet-button").before(
               "<span>Thank you " +
-              name +
+              userObj.attributes[1].value +
               " for verifying your " +
-              group +
+              userObj.status[0].group +
               " status with ID.me.</span>"
             );
           }
