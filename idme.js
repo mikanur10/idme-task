@@ -14,8 +14,8 @@ $(function () {
     },
 
     request: function () {
-      var name = ""
-      var group = ""
+      // var name = ""
+      // var group = ""
       var userObj = {}
       if (this.access_token) {
         $.get(this.params()).done((payload) => {
