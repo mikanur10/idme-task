@@ -19,12 +19,14 @@ $(function () {
           userObj = payload
           console.log(userObj)
           if (payload.status[0].verified) {
+            name = userObj.attributes[1].value
+            group = userObj.status[0].group
             $("#idme-wallet-button").hide();
             $("#idme-wallet-button").before(
               "<span>Thank you " +
-              userObj.attributes[1].value +
+              name +
               " for verifying your " +
-              userObj.status[0].group +
+              group +
               " status with ID.me.</span>"
             );
           }
