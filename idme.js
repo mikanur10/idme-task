@@ -16,7 +16,7 @@ $(function () {
     request: function () {
       // var name = ""
       // var group = ""
-      var userObj = {}
+      // var userObj = {}
       if (this.access_token) {
         $.get(this.params()).done((payload) => {
           userObj = payload
