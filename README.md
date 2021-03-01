@@ -1,1 +1,3 @@
 # idme-task
+
+This exercise demonstrates ID.me authentication using sample JQuery code. After clicking the ID.me button, the user is directed to ID.me’s login page to input credentials. The site then makes an API call to the authorization endpoint. Upon successful verification, the site is granted an access token and redirects to receive the access token in the window’s URL. The application then reads the access token from the URL, makes another API call to the attributes URL, and retrieves the users information. This user information is captured in an object and available for use in the application. Post verification, this application uses this object data to display the user’s information and verification status. 
