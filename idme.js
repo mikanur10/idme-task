@@ -23,13 +23,10 @@ $(function () {
           userObj = payload
           console.log(userObj)
           if (payload.status[0].verified) {
-            $("#test").text("Thank you for verifiying!"
-            )
             name = userObj.attributes[1].value
             group = userObj.status[0].group
-            $("#test").text("Hi " + name + "!")
-            $("#idme-verification").hide();
-            $("#idme-verification").before(
+            $("#idme-wallet-button").hide();
+            $("#idme-wallet-button").before(
               "<span>Thank you " +
               name +
               " for verifying your " +
