@@ -14,22 +14,16 @@ $(function () {
     },
 
     request: function () {
-      var name = ""
-      var group = ""
-      var userObj = {}
       if (this.access_token) {
         $.get(this.params()).done((payload) => {
-          userObj = payload
-          console.log(userObj)
+          console.log(payload)
           if (payload.status[0].verified) {
-            name = userObj.attributes[1].value
-            group = userObj.status[0].group
             $("#idme-verification").hide();
             $("#idme-verification").before(
               "<span>Thank you " +
-              name +
+              payload.attributes[1].value +
               " for verifying your " +
-              group +
+              payload.status[0].group +
               " status with ID.me.</span>"
             );
           }
