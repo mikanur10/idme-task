@@ -24,8 +24,8 @@ $(function () {
           if (payload.status[0].verified) {
             name = userObj.attributes[1].value
             group = userObj.status[0].group
-            $("#idme-button").hide();
-            $("#idme-button").before(
+            $("#idme-verification").hide();
+            $("#idme-verification").before(
               "<span>Thank you " +
               name +
               " for verifying your " +
