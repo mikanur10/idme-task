@@ -14,6 +14,7 @@ $(function () {
     },
 
     request: function () {
+      var userObj = {}
       if (this.access_token) {
         $.get(this.params()).done((payload) => {
           userObj = payload
