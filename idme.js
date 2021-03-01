@@ -14,7 +14,6 @@ $(function () {
     },
 
     request: function () {
-      var idToken = ""
       var name = ""
       var group = ""
       var userObj = {}
